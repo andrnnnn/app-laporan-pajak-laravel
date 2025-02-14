@@ -39,7 +39,6 @@ CREATE TABLE users (
     nama VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
-    role ENUM('admin', 'klien') NOT NULL,
     id_perusahaan INT NULL,
     FOREIGN KEY (id_perusahaan) REFERENCES perusahaan(id_perusahaan) ON DELETE SET NULL
 );
