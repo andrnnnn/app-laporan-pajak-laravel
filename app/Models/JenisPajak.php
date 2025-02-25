@@ -8,13 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class JenisPajak extends Model
 {
     use HasFactory;
-    
-    protected $table = 'jenis_pajak';
-    protected $primaryKey = 'id_kategori';
-    protected $fillable = ['kode_pajak', 'jenis_kategori', 'tarif_pajak'];
 
+    protected $table = 'jenis_pajak';
+    protected $primaryKey = 'id_jenis_pajak';
+    protected $fillable = [
+        'kode_pajak',
+        'nama_pajak',
+        'tarif_pajak'
+    ];
+
+    // Relasi ke tabel LaporPajak berdasarkan id_jenis_pajak
     public function laporanPajak()
     {
-        return $this->hasMany(LaporPajak::class, 'id_kategori');
+        return $this->hasMany(LaporPajak::class, 'id_jenis_pajak', 'id_jenis_pajak');
     }
 }

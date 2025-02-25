@@ -8,18 +8,26 @@ use Illuminate\Database\Eloquent\Model;
 class LaporPajak extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'lapor_pajak';
     protected $primaryKey = 'id_laporan';
-    protected $fillable = ['id_data', 'id_kategori', 'bulan_pajak', 'tahun_pajak', 'potongan', 'total_penghasilan'];
+    protected $fillable = [
+        'id_karyawan',
+        'id_jenis_pajak',
+        'bulan_pajak',
+        'tahun_pajak',
+        'tanggal_pembayaran',
+        'potongan',
+        'penghasilan_bersih'
+    ];
 
     public function karyawan()
     {
-        return $this->belongsTo(PajakKaryawan::class, 'id_data');
+        return $this->belongsTo(PajakKaryawan::class, 'id_karyawan', 'id_karyawan');
     }
 
     public function jenisPajak()
     {
-        return $this->belongsTo(JenisPajak::class, 'id_kategori');
+        return $this->belongsTo(JenisPajak::class, 'id_jenis_pajak', 'id_jenis_pajak');
     }
 }
