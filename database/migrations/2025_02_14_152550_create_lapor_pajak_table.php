@@ -13,16 +13,17 @@ return new class extends Migration
     {
         Schema::create('lapor_pajak', function (Blueprint $table) {
             $table->id('id_laporan');
-            $table->foreignId('id_data')->constrained('pajak_karyawan', 'id_data')->onDelete('cascade');
-            $table->foreignId('id_kategori')->constrained('jenis_pajak', 'id_kategori')->onDelete('cascade');
+            $table->foreignId('id_karyawan')->constrained('pajak_karyawan', 'id_karyawan')->onDelete('cascade');
+            $table->foreignId('id_jenis_pajak')->constrained('jenis_pajak', 'id_jenis_pajak')->onDelete('cascade');
             $table->integer('bulan_pajak');
             $table->integer('tahun_pajak');
+            $table->date('tanggal_pembayaran');
             $table->decimal('potongan', 15, 2);
-            $table->decimal('total_penghasilan', 15, 2);
+            $table->decimal('penghasilan_bersih', 15, 2);
             $table->timestamps();
         });
     }
-    
+
     /**
      * Reverse the migrations.
      */

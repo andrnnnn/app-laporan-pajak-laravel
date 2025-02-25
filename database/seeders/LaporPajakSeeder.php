@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -13,54 +12,72 @@ class LaporPajakSeeder extends Seeder
         DB::table('lapor_pajak')->insert([
             // Laporan Pajak PT Indofood
             [
-                'id_data' => 1,
-                'id_kategori' => 1,
+                'id_karyawan' => 1,
+                'id_jenis_pajak' => 1, // PPh21
                 'bulan_pajak' => 2,
                 'tahun_pajak' => 2024,
-                'potongan' => 700000 * 5 / 100,
-                'total_penghasilan' => 7000000 - (7000000 * 5 / 100)
+                'tanggal_pembayaran' => '2024-02-01',
+                'potongan' => 7000000 * 5 / 100,
+                'penghasilan_bersih' => 7000000 - (7000000 * 5 / 100),
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
-                'id_data' => 2,
-                'id_kategori' => 1,
+                'id_karyawan' => 2,
+                'id_jenis_pajak' => 1, // PPh21
                 'bulan_pajak' => 2,
                 'tahun_pajak' => 2024,
+                'tanggal_pembayaran' => '2024-02-01',
                 'potongan' => 8000000 * 5 / 100,
-                'total_penghasilan' => 8000000 - (8000000 * 5 / 100)
+                'penghasilan_bersih' => 8000000 - (8000000 * 5 / 100),
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
-                'id_data' => 3,
-                'id_kategori' => 1,
+                'id_karyawan' => 3,
+                'id_jenis_pajak' => 2, // PPh23
                 'bulan_pajak' => 2,
                 'tahun_pajak' => 2024,
+                'tanggal_pembayaran' => '2024-02-01',
                 'potongan' => 10000000 * 10 / 100,
-                'total_penghasilan' => 10000000 - (10000000 * 10 / 100)
+                'penghasilan_bersih' => 10000000 - (10000000 * 10 / 100),
+                'created_at' => now(),
+                'updated_at' => now()
             ],
 
             // Laporan Pajak PT Pertamina
             [
-                'id_data' => 4,
-                'id_kategori' => 1,
+                'id_karyawan' => 4,
+                'id_jenis_pajak' => 1, // PPh21
                 'bulan_pajak' => 2,
                 'tahun_pajak' => 2024,
+                'tanggal_pembayaran' => '2024-02-01',
                 'potongan' => 12000000 * 10 / 100,
-                'total_penghasilan' => 12000000 - (12000000 * 10 / 100)
+                'penghasilan_bersih' => 12000000 - (12000000 * 10 / 100),
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
-                'id_data' => 5,
-                'id_kategori' => 1,
+                'id_karyawan' => 5,
+                'id_jenis_pajak' => 2, // PPh23
                 'bulan_pajak' => 2,
                 'tahun_pajak' => 2024,
+                'tanggal_pembayaran' => '2024-02-01',
                 'potongan' => 9500000 * 5 / 100,
-                'total_penghasilan' => 9500000 - (9500000 * 5 / 100)
+                'penghasilan_bersih' => 9500000 - (9500000 * 5 / 100),
+                'created_at' => now(),
+                'updated_at' => now()
             ],
             [
-                'id_data' => 6,
-                'id_kategori' => 1,
+                'id_karyawan' => 6,
+                'id_jenis_pajak' => 1, // PPh21
                 'bulan_pajak' => 2,
                 'tahun_pajak' => 2024,
+                'tanggal_pembayaran' => '2024-02-01',
                 'potongan' => 8500000 * 5 / 100,
-                'total_penghasilan' => 8500000 - (8500000 * 5 / 100)
+                'penghasilan_bersih' => 8500000 - (8500000 * 5 / 100),
+                'created_at' => now(),
+                'updated_at' => now()
             ]
         ]);
     }

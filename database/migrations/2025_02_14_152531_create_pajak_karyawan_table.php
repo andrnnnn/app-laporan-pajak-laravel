@@ -12,15 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pajak_karyawan', function (Blueprint $table) {
-            $table->id('id_data');
+            $table->id('id_karyawan');
             $table->foreignId('id_perusahaan')->constrained('perusahaan', 'id_perusahaan')->onDelete('cascade');
             $table->string('npwp', 20)->unique();
             $table->string('nama_karyawan', 100);
             $table->text('alamat');
-            $table->date('tanggal_pembayaran');
             $table->decimal('penghasilan', 15, 2);
-            $table->decimal('pajak_terpotong', 15, 2);
-            $table->enum('status_pajak', ['Kena Pajak', 'Tidak Kena Pajak'])->default('Kena Pajak');
+            $table->enum('status_pajak', ['Wajib Pajak', 'Tidak Wajib Pajak'])->default('Wajib Pajak');
             $table->timestamps();
         });
     }

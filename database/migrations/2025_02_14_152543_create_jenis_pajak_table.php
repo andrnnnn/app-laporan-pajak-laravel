@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('jenis_pajak', function (Blueprint $table) {
-            $table->id('id_kategori');
+            $table->id('id_jenis_pajak');
             $table->string('kode_pajak', 10)->unique();
-            $table->string('jenis_kategori', 50);
+            $table->string('nama_pajak', 50);
             $table->decimal('tarif_pajak', 5, 2);
             $table->timestamps();
         });
-    }    
+    }
 
     /**
      * Reverse the migrations.
