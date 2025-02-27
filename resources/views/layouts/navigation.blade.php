@@ -22,6 +22,18 @@
                         {{ __('Perusahaan') }}
                     </x-nav-link>
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('pajak-karyawan.index')" :active="request()->routeIs('pajak-karyawan.index')">
+                        {{ __('Karyawan') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('jenis-pajak.index')" :active="request()->routeIs('jenis-pajak.index')">
+                        {{ __('Jenis Pajak') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -81,6 +93,18 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('perusahaan.index')" :active="request()->routeIs('perusahaan.index')">
                 {{ __('Perusahaan') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('pajak-karyawan.index')" :active="request()->routeIs('pajak-karyawan.index')">
+                {{ __('Karyawan') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('jenis-pajak.index')" :active="request()->routeIs('jenis-pajak.index')">
+                {{ __('Jenis Pajak') }}
             </x-responsive-nav-link>
         </div>
 
