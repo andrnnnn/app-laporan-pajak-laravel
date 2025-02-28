@@ -43,6 +43,7 @@
             let table = $('#perusahaanTable').DataTable({
                 processing: true,
                 serverSide: true,
+                scrollX: true,
                 ajax: "{{ route('perusahaan.index') }}",
                 dom: 'lBfrtip',
                 buttons: [

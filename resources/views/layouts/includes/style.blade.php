@@ -9,3 +9,10 @@
 
 {{-- Font Awesome --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+    table.dataTable {
+    width: 100% !important;
+    white-space: nowrap;
+    }
+</style>
