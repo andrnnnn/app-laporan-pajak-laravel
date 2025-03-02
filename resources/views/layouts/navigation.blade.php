@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 fixed top-0 left-0 w-full z-50">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-12 w-auto rounded-2xl fill-current text-black" />
+                        <x-application-logo class="block h-12 w-auto fill-current" />
                     </a>
                 </div>
 
@@ -32,6 +32,12 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('jenis-pajak.index')" :active="request()->routeIs('jenis-pajak.index')">
                         {{ __('Jenis Pajak') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('lapor-pajak.index')" :active="request()->routeIs('lapor-pajak.index')">
+                        {{ __('Laporan') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -105,6 +111,12 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('jenis-pajak.index')" :active="request()->routeIs('jenis-pajak.index')">
                 {{ __('Jenis Pajak') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('lapor-pajak.index')" :active="request()->routeIs('lapor-pajak.index')">
+                {{ __('Laporan') }}
             </x-responsive-nav-link>
         </div>
 
