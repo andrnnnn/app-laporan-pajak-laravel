@@ -16,6 +16,9 @@
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-50 dark:bg-gray-900">
+            <div class="text-2xl font-bold p-10 dark:text-gray-50">
+                Sistem Laporan Pajak Penghasilan
+            </div>
             <div>
                 <a href="/">
                     <x-application-logo class="w-22 h-22 fill-current" />
