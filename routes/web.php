@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PerusahaanController;
 use App\Http\Controllers\PajakKaryawanController;
 use App\Http\Controllers\JenisPajakController;
+use App\Http\Controllers\LaporPajakController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,6 +37,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/jenis-pajak/{id}/edit', [JenisPajakController::class, 'edit'])->name('jenis-pajak.edit');
     Route::put('/jenis-pajak/{id}', [JenisPajakController::class, 'update'])->name('jenis-pajak.update');
     Route::delete('/jenis-pajak/{id}', [JenisPajakController::class, 'destroy'])->name('jenis-pajak.destroy');
+
+    // Routes untuk Lapor Pajak
+    Route::get('/lapor-pajak', [LaporPajakController::class, 'index'])->name('lapor-pajak.index');
+    Route::post('/lapor-pajak', [LaporPajakController::class, 'store'])->name('lapor-pajak.store');
+    Route::get('/lapor-pajak/{id}', [LaporPajakController::class, 'preview'])->name('lapor-pajak.preview'); // Untuk melihat laporan
+    Route::get('/lapor-pajak/{id}/print', [LaporPajakController::class, 'print'])->name('lapor-pajak.print'); // Untuk mencetak laporan
+    Route::delete('/lapor-pajak/{id}', [LaporPajakController::class, 'destroy'])->name('lapor-pajak.destroy');
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
