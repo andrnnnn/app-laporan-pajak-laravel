@@ -12,7 +12,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
-                <a href="{{ route('lapor-pajak.create') }}" class="btn btn-primary mb-3">Tambah Laporan Pajak</a>
+                @include('laporpajak.partials.modal-form-add-lapor-pajak')
                 <table class="table table-striped table-bordered" id="laporPajakTable">
                     <thead class="table-dark">
                         <tr>
@@ -94,7 +94,17 @@
                     { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
                     { data: 'karyawan.nama_karyawan', name: 'karyawan.nama_karyawan' },
                     { data: 'jenis_pajak.kode_pajak', name: 'jenisPajak.kode_pajak' },
-                    { data: 'bulan_pajak', name: 'bulan_pajak' },
+                    {
+                        data: 'bulan_pajak',
+                        name: 'bulan_pajak',
+                        render: function(data, type, row) {
+                            let monthNames = [
+                                '', 'January', 'February', 'March', 'April', 'May', 'June',
+                                'July', 'August', 'September', 'October', 'November', 'December'
+                            ];
+                            return monthNames[data] || data;
+                        }
+                    },
                     { data: 'tahun_pajak', name: 'tahun_pajak' },
                     { data: 'tanggal_pembayaran', name: 'tanggal_pembayaran' },
                     { data: 'potongan', name: 'potongan', render: $.fn.dataTable.render.number(',', '.', 0, 'Rp ') },
